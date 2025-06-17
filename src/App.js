@@ -7,7 +7,7 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await axios.post("http://localhost:5000/submit", { username });
+    const response = await axios.post("https://thankforma-backend.onrender.com/submit", { username });
     setMessage(response.data.message);
   };
 
