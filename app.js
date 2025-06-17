@@ -7,7 +7,7 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await axios.post("http://localhost:5000/submit", { username });
+   const response = await axios.post("https://thankform-backend.vercel.app/api/submit", { username });
     setMessage(response.data.message);
   };
 
@@ -34,5 +34,10 @@ function App() {
     </div>
   );
 }
+const cors = require("cors");
+app.use(cors({
+  origin: "*", // or your frontend domain in production
+}));
+
 
 export default App;
